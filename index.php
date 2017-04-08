@@ -119,7 +119,8 @@ $m[0]=0;
 
 
 if (isset($_POST['sub2'])) {
-    
+    session_start();
+    $_SESSION['id'] = 0;
     $m = protect (
          tsk('log','логин' ), 'sqlhtml',
         tsk('pas','пароль' ), 'sqlhtml'
@@ -166,9 +167,9 @@ if ((isset($_POST['sub1']))||(isset($_POST['sub3']))) {
 	 $m = protect (
 	 	 tsk('log','логин' ), 'sqlhtml',
         tsk('pas','пароль' ), 'sqlhtml',
-	 	tsk('name','имя' ), 'sqlhtml',
-        tsk('surname','фамилия' ), 'sqlhtml',
-        tsk('patron','отчество' ), 'sqlhtml',
+	 	tsk('name','имя' ), 'html',
+        tsk('surname','фамилия' ), 'html',
+        tsk('patron','отчество' ), 'html',
         tsk('date','дата рождения' ), 'sqlhtml',
         tsk('email','email' ), 'sqlhtml',
         tsk('phone','телефон' ),  'sqlhtml'
